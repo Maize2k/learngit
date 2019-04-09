@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $("#userName").html("档案仓库管理员您好！");
+            $("#addConfirm").click(function(){
+                var inputData = "<root><name>"+$("#boxName").val()+"</name><RackID>"+$("#RackID").val()+"</RackID><ArchiveBookNum>"+$("#ArchiveBookNum").val()+"</ArchiveBookNum></root>";
+                $.ajax({
+                    type: "POST",
+                    url: "service.php",
+                    dataType: "xml",
+                    data: inputData,
+                    success: function(){
+                        alert("添加失败");
+                    },
+                    error: function(){
+                        alert("添加成功");
+                    }
+                });
+            });
+        });
+    </script>
+    <title>仓库管理员操作页面</title>
+</head>
+<body>
+    <h1 id="userName"></h1>
+    <hr>
+    <h3>档案添加</h3>
+    <form action="" method="">
+        <label for="name">档案盒名称:</label>
+        <input name="name" type="text" value="" id="boxName"><br>
+        <label for="RackID">所在架编号:</label>
+        <input name="RackID" type="text" value="" id="RackID"><br>
+        <label for="ArchiveBookNum">盒中数量:</label>
+        <input name="ArchiveBookNum" type="text" value="" id="ArchiveBookNum"><br>
+
+        <label for="BoxID">档案盒ID:</label>
+        <input name="BoxID" type="text" value="" id="BoxID"><br>
+        <label for="">未分配字段:</label>
+        <input name="" type="text" value="0" id=""><br>
+        <label for="CreatorID">创建者ID:</label>
+        <input name="CreatorID" type="text" value="" id="CreatorID"><br>
+        <label for="CreateTime">创建时间:</label>
+        <input name="CreateTime" type="text" value="" id="CreateTime"><br>
+        <input type="button" value="确定" id="addConfirm">
+        <input type="reset" value="重置" >
+    </form>
+    <!--接收登记档案-->
+</body>
+</html>
