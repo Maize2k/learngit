@@ -1,55 +1,216 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
-    <script type="text/javascript">
-        $(document).ready(function(){
-            $("#userName").html("档案仓库管理员您好！");
-            $("#addConfirm").click(function(){
-                var inputData = "<root><name>"+$("#boxName").val()+"</name><RackID>"+$("#RackID").val()+"</RackID><ArchiveBookNum>"+$("#ArchiveBookNum").val()+"</ArchiveBookNum></root>";
-                $.ajax({
-                    type: "POST",
-                    url: "service.php",
-                    dataType: "xml",
-                    data: inputData,
-                    success: function(){
-                        alert("添加失败");
-                    },
-                    error: function(){
-                        alert("添加成功");
-                    }
-                });
-            });
-        });
-    </script>
-    <title>仓库管理员操作页面</title>
-</head>
-<body>
-    <h1 id="userName"></h1>
-    <hr>
-    <h3>档案添加</h3>
-    <form action="" method="">
-        <label for="name">档案盒名称:</label>
-        <input name="name" type="text" value="" id="boxName"><br>
-        <label for="RackID">所在架编号:</label>
-        <input name="RackID" type="text" value="" id="RackID"><br>
-        <label for="ArchiveBookNum">盒中数量:</label>
-        <input name="ArchiveBookNum" type="text" value="" id="ArchiveBookNum"><br>
 
-        <label for="BoxID">档案盒ID:</label>
-        <input name="BoxID" type="text" value="" id="BoxID"><br>
-        <label for="">未分配字段:</label>
-        <input name="" type="text" value="0" id=""><br>
-        <label for="CreatorID">创建者ID:</label>
-        <input name="CreatorID" type="text" value="" id="CreatorID"><br>
-        <label for="CreateTime">创建时间:</label>
-        <input name="CreateTime" type="text" value="" id="CreateTime"><br>
-        <input type="button" value="确定" id="addConfirm">
-        <input type="reset" value="重置" >
-    </form>
-    <!--接收登记档案-->
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>warehouse manage</title>
+</head>
+
+<body>
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="#">Archive Management System</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto"></ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <span class="navbar-text">Warehouse Manage&nbsp;&nbsp;&nbsp;</span>
+                    </li>
+                    <li class="nav-item">
+                        <span class="navbar-text">User :Mike</span>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Quit</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <nav>
+            <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                <a class="nav-item nav-link active" id="nav-overview-tab" data-toggle="tab" href="#nav-overview"
+                    role="tab" aria-controls="nav-overview" aria-selected="true" style="color:black">Overview</a>
+                <a class="nav-item nav-link" id="nav-addArchives-tab" data-toggle="tab" href="#nav-addArchives"
+                    role="tab" aria-controls="nav-addArchives" aria-selected="false" style="color:black">AddArchives</a>
+                <a class="nav-item nav-link" id="nav-backArchives-tab" data-toggle="tab" href="#nav-backArchives"
+                    role="tab" aria-controls="nav-backArchives" aria-selected="false" style="color:black">Back Archives</a>
+            </div>
+        </nav>
+        <div class="tab-content" id="nav-tabContent">
+            <div class="tab-pane fade show active" id="nav-overview" role="tabpanel" aria-labelledby="nav-overview-tab">
+                <div class="row">
+                    <div class="col-md-4">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Information:</th>
+                                    <th scope="col"></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Name:</th>
+                                    <td>Mike</td>
+
+                                </tr>
+                                <tr>
+                                    <th scope="row">Sex:</th>
+                                    <td>Male</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Identity:</th>
+                                    <td>Warehouse Manager</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="col-md-3"></div>
+                    <div class="col-md-5">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Notice:</th>
+                                    <th scope="col"></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row"></th>
+                                    <td><a href="">New mission announced!</a></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"></th>
+                                    <td><a href="">New mission announced!</a></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"></th>
+                                    <td><a href="">New mission announced!</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="nav-addArchives" role="tabpanel" aria-labelledby="nav-addArchives-tab">
+                <div class="row">
+                    <form class="col-md-7">
+                        <div class="form-group">
+                            <label for="name">box name:</label>
+                            <input type="text" class="form-control" id="name" placeholder="input your box name">
+                        </div>
+                        <div class="form-group">
+                            <label for="ArchiveBookNum">book amount inside:</label>
+                            <input type="text" class="form-control" id="ArchiveBookNum"
+                                placeholder="input your book amount">
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="BoxID">box id:</label>
+                                <input type="text" class="form-control" id="BoxID" value="the box id" readonly>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="RackID">rack id:</label>
+                                <input type="text" class="form-control" id="RackID" placeholder="input your rack id">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="CreatorID">creator id:</label>
+                                <input type="text" class="form-control" id="CreatorID" value="the creator id" readonly>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="CreateTime">create time:</label>
+                                <input type="text" class="form-control" id="CreateTime" value="the create time"
+                                    readonly>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="Textarea1">other information:</label>
+                            <textarea class="form-control" id="Textarea1" rows="3"></textarea>
+                        </div>
+                        <div class="from-row">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <button type="reset" class="btn btn-secondary">Reset</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="nav-backArchives" role="tabpanel" aria-labelledby="nav-backArchives-tab">
+                <div class="row">
+                    <form class="col-md-7">
+                        <div class="form-group">
+                            <label for="deliverymanID">deliveryman id:</label>
+                            <input type="text" class="form-control" id="deliverymanID"
+                                placeholder="input the deliveryman id">
+                        </div>
+                        <div class="form-group">
+                            <label for="deliveryTime">delivery time:</label>
+                            <input type="text" class="form-control" id="deliveryTime"
+                                placeholder="input the delivery time">
+                        </div>
+                        <div class="form-group">
+                            <label for="RackID">rack id:</label>
+                            <input type="text" class="form-control" id="RackID" placeholder="input the rack id">
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-4">
+                                <label for="LogID">log id:</label>
+                                <input type="text" class="form-control" id="LogID" value="log id" readonly>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="UserID">user id:</label>
+                                <input type="text" class="form-control" id="UserID" value="user id" readonly>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="TargetID">target id:</label>
+                                <input type="text" class="form-control" id="TargetID" value="target id" readonly>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="Operate">operate:</label>
+                                <input type="text" class="form-control" id="Operate" value="operate" readonly>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="OperateTime">operate time:</label>
+                                <input type="text" class="form-control" id="OperateTime" value="operate time" readonly>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="Textarea1">other information:</label>
+                            <textarea class="form-control" id="Textarea1" rows="3"></textarea>
+                        </div>
+                        <div class="from-row">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <button type="reset" class="btn btn-secondary">Reset</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
 </body>
+
 </html>
