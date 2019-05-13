@@ -1,58 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
-    <script type="text/javascript">
-        $(document).ready(function(){
-            $("#logIn").click(function(){
-                var inputData = "<root><UserID>"+$("#UserID").val()+"</UserID><UPassword>"+$("#UPassword").val()+"</UPassword><jobType>"+$("#jobType").val()+"</jobType></root>";
-                $.ajax({
-                    type: "POST",
-                    url: "service.php",
-                    dataType: "xml",
-                    data: inputData,
-                    success: function(){
-                        alert("登录失败");
-                    },
-                    error: function(){
-                        alert("登录成功");
-                        switch($("#jobType").val()){
-                            case "业务管理员": window.location.href = "Operation stuff/service_manager_Page.html";break;
-                            case "档案加工员":window.location.href = "Operation stuff/processing_operator_Page.html";break;
-                            case "档案质检员":window.location.href = "Operation stuff/quality_inspector_Page.html";break;
-                            case "档案仓库管理员":window.location.href = "Operation stuff/warehouse_manager_Page.html";break;
-                            case "系统管理员":window.location.href = "Operation stuff/system_administrator_Page.html";break;
-                        }
-                    }
-                });
-            });
-        });
-    </script>
-    <style type="text/css">#pageBody {font-size: 20px}</style>
-    <title>档案加工处理与归档管理系统登录页面</title>
-</head>
-<body>
-    <h1>欢迎使用档案加工处理与归档管理系统</h1>
-    <div id=pageBody>
-    <form action="" method="">
-        <label for="UserID">用户名:</label>
-        <input type="text" name="UserID" id="UserID" value=""><br>
-        <label for="UPassword">密&nbsp;&nbsp;&nbsp;&nbsp;码:</label>
-        <input type="password"  name="UPassword" id="UPassword" value=""><br>
-        <label>身&nbsp;&nbsp;&nbsp;&nbsp;份:</label>
-        <select id="jobType" name="jobType">
-            <option value="业务管理员">业务管理员</option>
-            <option value="档案加工员">档案加工员</option>
-            <option value="档案质检员">档案质检员</option>
-            <option value="档案仓库管理员">档案仓库管理员</option>
-            <option value="系统管理员">系统管理员</option>
-        </select><br>
-        <input type="button" value="登录" id="logIn">
-        <input type="reset" value="重置">
-    </form>
-    </div>
-</body>
-</html>  
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style type="text/css">
+        body{background-color:#F5F5F5;}
+    </style>
+    <title>log in</title>
+  </head>
+  <body>
+      <div class="container">
+            <div class="row" style="margin-top: 30%;">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+                <h2 style="margin-bottom:30px;">Please sign in</h2>
+                <form>
+                    <div class="form-group">
+                    <!-- <label for="UserID">Email address</label> -->
+                    <input type="text" class="form-control" id="UserID" placeholder="User Name">
+                    </div>
+                    <div class="form-group">
+                    <!-- <label for="UserPWD">Password</label> -->
+                    <input type="password" class="form-control" id="UserPWD" placeholder="Password">
+                    </div>
+                    <div class="form-group">
+                    <!-- <label for="chose_Identity">Identity</label> -->
+                    <select id="chose_Identity" class="form-control">
+                        <option disabled selected>Identity</option>
+                        <option>Archive Manager</option>
+                        <option>Mission Manager</option>
+                        <option>Archive Worker</option>
+                        <option>Quality Inspector</option>
+                        <option>System Manager</option>
+                    </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary form-control">sign in</button>
+                </form>
+            </div> 
+            <div class="col-md-4"></div>   
+            </div>     
+      </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>

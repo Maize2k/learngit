@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <title>mission manage</title>
+</head>
+
+<body>
+  <div class="container">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="#">Archive Management System</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto"></ul>
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <span class="navbar-text">Mission Manage&nbsp;&nbsp;&nbsp;</span>
+          </li>
+          <li class="nav-item">
+            <span class="navbar-text">User :Mike</span>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Quit</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <nav>
+      <div class="nav nav-tabs" id="nav-tab" role="tablist">
+        <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab"
+          aria-controls="nav-home" aria-selected="true" style="color:black">Overview</a>
+        <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab"
+          aria-controls="nav-profile" aria-selected="false" style="color:black">Create Missions</a>
+        <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab"
+          aria-controls="nav-contact" aria-selected="false" style="color:black">Search</a>
+      </div>
+    </nav>
+    <div class="tab-content" id="nav-tabContent">
+      <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+        <div class="row">
+          <div class="col-md-4">
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th scope="col">Information:</th>
+                  <th scope="col"></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Name:</th>
+                  <td>Mike</td>
+
+                </tr>
+                <tr>
+                  <th scope="row">Sex:</th>
+                  <td>Male</td>
+                </tr>
+                <tr>
+                  <th scope="row">Identity:</th>
+                  <td>Mission Manager</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="col-md-3"></div>
+          <div class="col-md-5">
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th scope="col">Notice:</th>
+                  <th scope="col"></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row"></th>
+                  <td><a href="">New mission announced!</a></td>
+                </tr>
+                <tr>
+                  <th scope="row"></th>
+                  <td><a href="">New mission announced!</a></td>
+                </tr>
+                <tr>
+                  <th scope="row"></th>
+                  <td><a href="">New mission announced!</a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+        <div class="row">
+          <form class="col-md-7">
+            <div class="form-group">
+              <label for="target_type">target type:</label>
+              <select class="form-control" id="target_type">
+                <option>book</option>
+                <option>box</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="mission_urgency">urgency:</label>
+              <select class="form-control" id="mission_urgency">
+                <option>0</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="archive_id">archive id:</label>
+              <input type="text" class="form-control" id="archive_id" placeholder="the archive id">
+            </div>
+            <div class="form-group">
+              <label for="mission_deadline">deadline:</label>
+              <input type="text" class="form-control" id="mission_deadline" placeholder="deadline date">
+            </div>
+            <div class="form-group">
+              <div class="row">
+                <div class="col">
+                  <label for="mission_id">mission id:</label>
+                  <input type="text" class="form-control" id="mission_id" placeholder="mission id" readonly>
+                </div>
+                <div class="col">
+                  <label for="mission_status">mission status:</label>
+                  <input type="text" class="form-control" id="mission_status" placeholder="the mission status" readonly>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="row">
+                <div class="col">
+                  <label for="creator_id">creator id:</label>
+                  <input type="text" class="form-control" id="creator_id" placeholder="creator id" readonly>
+                </div>
+                <div class="col">
+                  <label for="create_time">create time:</label>
+                  <input type="text" class="form-control" id="create_time" placeholder="the create time" readonly>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="exampleFormControlTextarea1">Example textarea</label>
+              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+        <form>
+          <div class="form-group">
+            <div class="row">
+              <div class="col">
+                <label for="key_word_1">key word i</label>
+                <input type="text" class="form-control" id="key_word_1">
+              </div>
+              <div class="col">
+                <label for="key_word_2">key word ii</label>
+                <input type="text" class="form-control" id="key_word_2">
+              </div>
+              <div class="col">
+                <button type="submit" class="btn btn-primary">Search</button>
+              </div>
+            </div>
+          </div>
+        </form>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">ID</th>
+              <th scope="col">Name</th>
+              <th scope="col">Time</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>001</td>
+              <td>Tom's archive</td>
+              <td>2019.05.5</td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>002</td>
+              <td>Jack's archive</td>
+              <td>2019.05.4</td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td>003</td>
+              <td>Mike's archive</td>
+              <td>2019.05.3</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
