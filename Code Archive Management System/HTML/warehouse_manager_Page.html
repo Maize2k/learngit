@@ -7,8 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="../Environment/bootstrap.min.css">
     <title>warehouse manage</title>
 </head>
 
@@ -42,9 +41,11 @@
                 <a class="nav-item nav-link active" id="nav-overview-tab" data-toggle="tab" href="#nav-overview"
                     role="tab" aria-controls="nav-overview" aria-selected="true" style="color:black">Overview</a>
                 <a class="nav-item nav-link" id="nav-addArchives-tab" data-toggle="tab" href="#nav-addArchives"
-                    role="tab" aria-controls="nav-addArchives" aria-selected="false" style="color:black">AddArchives</a>
+                    role="tab" aria-controls="nav-addArchives" aria-selected="false" style="color:black">Add
+                    Archives</a>
                 <a class="nav-item nav-link" id="nav-backArchives-tab" data-toggle="tab" href="#nav-backArchives"
-                    role="tab" aria-controls="nav-backArchives" aria-selected="false" style="color:black">Back Archives</a>
+                    role="tab" aria-controls="nav-backArchives" aria-selected="false" style="color:black">Back
+                    Archives</a>
             </div>
         </nav>
         <div class="tab-content" id="nav-tabContent">
@@ -103,35 +104,30 @@
                 </div>
             </div>
             <div class="tab-pane fade" id="nav-addArchives" role="tabpanel" aria-labelledby="nav-addArchives-tab">
-                <div class="row">
+                <div class="row" style="margin-top:3%;margin-left:3%">
                     <form class="col-md-7">
                         <div class="form-group">
-                            <label for="name">box name:</label>
-                            <input type="text" class="form-control" id="name" placeholder="input your box name">
+                            <label for="add_box_name">box name:</label>
+                            <input type="text" class="form-control" id="add_box_name" placeholder="input your box name">
                         </div>
                         <div class="form-group">
-                            <label for="ArchiveBookNum">book amount inside:</label>
-                            <input type="text" class="form-control" id="ArchiveBookNum"
+                            <label for="add_amount_inside">book amount inside:</label>
+                            <input type="text" class="form-control" id="add_amount_inside"
                                 placeholder="input your book amount">
                         </div>
-                        <div class="form-row">
-                            <div class="form-group col-md-6">
-                                <label for="BoxID">box id:</label>
-                                <input type="text" class="form-control" id="BoxID" value="the box id" readonly>
-                            </div>
-                            <div class="form-group col-md-6">
-                                <label for="RackID">rack id:</label>
-                                <input type="text" class="form-control" id="RackID" placeholder="input your rack id">
-                            </div>
+                        <div class="form-group">
+                            <label for="add_rack_id">rack id:</label>
+                            <input type="text" class="form-control" id="add_rack_id" placeholder="input your rack id">
                         </div>
                         <div class="form-row">
                             <div class="form-group col-md-6">
-                                <label for="CreatorID">creator id:</label>
-                                <input type="text" class="form-control" id="CreatorID" value="the creator id" readonly>
+                                <label for="add_creator_id">creator id:</label>
+                                <input type="text" class="form-control" id="add_creator_id" value="the creator id"
+                                    readonly>
                             </div>
                             <div class="form-group col-md-6">
-                                <label for="CreateTime">create time:</label>
-                                <input type="text" class="form-control" id="CreateTime" value="the create time"
+                                <label for="add_create_time">create time:</label>
+                                <input type="text" class="form-control" id="add_create_time" value="the create time"
                                     readonly>
                             </div>
                         </div>
@@ -140,7 +136,7 @@
                             <textarea class="form-control" id="Textarea1" rows="3"></textarea>
                         </div>
                         <div class="from-row">
-                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <button type="submit" class="btn btn-primary" id="add_confirm">Confirm</button>
                             <button type="reset" class="btn btn-secondary">Reset</button>
                         </div>
                     </form>
@@ -148,43 +144,68 @@
             </div>
             <div class="tab-pane fade" id="nav-backArchives" role="tabpanel" aria-labelledby="nav-backArchives-tab">
                 <div class="row">
-                    <form class="col-md-7">
+                    <div class="col-md-5">
+                        <table class="table table-hover">
+                            <tbody>
+                                <tr>
+                                    <td>150001</td>
+                                    <td>Amy's archive</td>
+                                </tr>
+                                <tr>
+
+                                    <td>150002</td>
+                                    <td>Jack's archive</td>
+                                </tr>
+                                <tr>
+                                    <td>150003</td>
+                                    <td>Lucy's archive</td>
+                                </tr>
+                                <tr>
+                                    <td>150004</td>
+                                    <td>Cris's archive</td>
+                                </tr>
+                                <tr>
+                                    <td>150005</td>
+                                    <td>Judy's archive</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <a href="" style="text-decoration:underline" id="back_search">search for the archives...</a>
+                    </div>
+                    <div class="col-md-1"></div>
+                    <form class="col-md-6">
                         <div class="form-group">
-                            <label for="deliverymanID">deliveryman id:</label>
-                            <input type="text" class="form-control" id="deliverymanID"
+                            <label for="back_deliveryman_id">deliveryman id:</label>
+                            <input type="text" class="form-control" id="back_deliveryman_id"
                                 placeholder="input the deliveryman id">
                         </div>
                         <div class="form-group">
-                            <label for="deliveryTime">delivery time:</label>
-                            <input type="text" class="form-control" id="deliveryTime"
+                            <label for="back_delivery_time">delivery time:</label>
+                            <input type="text" class="form-control" id="back_delivery_time"
                                 placeholder="input the delivery time">
                         </div>
                         <div class="form-group">
-                            <label for="RackID">rack id:</label>
-                            <input type="text" class="form-control" id="RackID" placeholder="input the rack id">
+                            <label for="back_rack_id">rack id:</label>
+                            <input type="text" class="form-control" id="back_rack_id" placeholder="input the rack id">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="back_target_id">target id:</label>
+                            <input type="text" class="form-control" id="back_target_id" value="target id">
                         </div>
                         <div class="form-row">
                             <div class="form-group col-md-4">
-                                <label for="LogID">log id:</label>
-                                <input type="text" class="form-control" id="LogID" value="log id" readonly>
+                                <label for="back_user_id">user id:</label>
+                                <input type="text" class="form-control" id="back_user_id" value="user id" readonly>
                             </div>
                             <div class="form-group col-md-4">
-                                <label for="UserID">user id:</label>
-                                <input type="text" class="form-control" id="UserID" value="user id" readonly>
+                                <label for="back_operate">operate:</label>
+                                <input type="text" class="form-control" id="back_operate" value="operate" readonly>
                             </div>
                             <div class="form-group col-md-4">
-                                <label for="TargetID">target id:</label>
-                                <input type="text" class="form-control" id="TargetID" value="target id" readonly>
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group col-md-6">
-                                <label for="Operate">operate:</label>
-                                <input type="text" class="form-control" id="Operate" value="operate" readonly>
-                            </div>
-                            <div class="form-group col-md-6">
-                                <label for="OperateTime">operate time:</label>
-                                <input type="text" class="form-control" id="OperateTime" value="operate time" readonly>
+                                <label for="back_operate_time">operate time:</label>
+                                <input type="text" class="form-control" id="back_operate_time" value="operate time"
+                                    readonly>
                             </div>
                         </div>
                         <div class="form-group">
@@ -192,7 +213,7 @@
                             <textarea class="form-control" id="Textarea1" rows="3"></textarea>
                         </div>
                         <div class="from-row">
-                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <button type="submit" class="btn btn-primary" id="back_confirm">Confirm</button>
                             <button type="reset" class="btn btn-secondary">Reset</button>
                         </div>
                     </form>
@@ -202,15 +223,71 @@
     </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script>
+    <script src="../Environment/jquery-3.4.1.min.js"></script>
+    <script src="../Environment/popper.min.js"></script>
+    <script src="../Environment/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var dateTemp = new Date();
+            var nowDate = dateTemp.getFullYear() + "-" + (dateTemp.getMonth() + 1) + "-" + dateTemp.getDate() + " " + dateTemp.getHours() + ":" + dateTemp.getMinutes() + ":" + dateTemp.getSeconds();
+            var nowUserID = "Mike"
+            $("#add_confirm").click(function () {
+                $.ajax({
+                    type: "POST",
+                    url: "test.php",
+                    dataType: "json",
+                    data: {
+                        name: $("#add_box_name").val(),
+                        ArchiveBookNum: $("#add_amount_inside").val(),
+                        RackID: $("#add_rack_id").val(),
+                        CreatorID: nowUserID,
+                        CreateTime: nowDate
+                    },
+                    success: function () {
+
+                    },
+                    error: function () {
+                        alert("error!");
+                    },
+                });
+            });
+            $("#back_search").click(function () {
+                $.ajax({
+                    type: "GET",
+                    url: "test.php",
+                    dataType: "json",
+                    success: function () {
+
+                    },
+                    error: function () {
+                        alert("can not search!");
+                    }
+                });
+            });
+            $("#back_confirm").click(function () {
+                $.ajax({
+                    type: "POST",
+                    url: "test.php",
+                    dataType: "json",
+                    data: {
+                        deliverymanID: $("#back_deliveryman_id").val(),
+                        deliveryTime: $("#back_delivery_time").val(),
+                        RackID: $("#back_rack_id").val(),
+                        TargetID: $("#back_target_id").val(),
+                        UserID: nowUserID,
+                        Operate: File,
+                        OperateTime: nowDate
+                    },
+                    success: function () {
+
+                    },
+                    error: function () {
+                        alert("error!");
+                    },
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>
