@@ -30,7 +30,7 @@
             <span class="navbar-text">User :Mike</span>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Quit</a>
+            <a class="nav-link" href="#" id="log_out">logout</a>
           </li>
         </ul>
       </div>
@@ -42,8 +42,6 @@
           aria-controls="nav-home" aria-selected="true" style="color:black">Overview</a>
         <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab"
           aria-controls="nav-profile" aria-selected="false" style="color:black">Create Missions</a>
-        <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab"
-          aria-controls="nav-contact" aria-selected="false" style="color:black">Search</a>
       </div>
     </nav>
     <div class="tab-content" id="nav-tabContent">
@@ -103,53 +101,82 @@
       </div>
 
       <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-        <div class="row" style="margin-top:3%;margin-left:3%">
-          <form class="col-md-7">
-            <div class="form-group">
-              <label for="target_type">target type:</label>
-              <select class="form-control" id="target_type">
-                <option>book</option>
-                <option>box</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="mission_urgency">urgency:</label>
-              <select class="form-control" id="mission_urgency">
-                <option>0</option>
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="archive_id">archive id:</label>
-              <input type="text" class="form-control" id="archive_id" placeholder="the archive id">
-            </div>
-            <div class="form-group">
-              <label for="mission_deadline">deadline:</label>
-              <input type="text" class="form-control" id="mission_deadline" placeholder="deadline date">
-            </div>
+        <div class="row">
+          <div class="col-md-5">
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th scope="col">ID</th>
+                  <th scope="col">Name</th>
+                  <th scope="col">Time</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>150001</td>
+                  <td>Tom's archive</td>
+                  <td>2019.05.5</td>
+                </tr>
+                <tr>
+                  <td>150002</td>
+                  <td>Jack's archive</td>
+                  <td>2019.05.4</td>
+                </tr>
+                <tr>
+                  <td>150003</td>
+                  <td>Mike's archive</td>
+                  <td>2019.05.3</td>
+                </tr>
+              </tbody>
+            </table>
+            <a href="" style="text-decoration:underline" id="create_search">search for the archives...</a>
+          </div>
+
+          <div class="col-md-1"></div>
+
+          <form class="col-md-6">
             <div class="form-group">
               <div class="row">
                 <div class="col">
-                  <label for="mission_id">mission id:</label>
-                  <input type="text" class="form-control" id="mission_id" placeholder="mission id" readonly>
+                  <label for="create_target_id">target id:</label>
+                  <input type="text" class="form-control" id="create_target_id" placeholder="the target id">
                 </div>
                 <div class="col">
-                  <label for="mission_status">mission status:</label>
-                  <input type="text" class="form-control" id="mission_status" placeholder="the mission status" readonly>
+                  <label for="create_target_type">target type:</label>
+                  <select class="form-control" id="create_target_type">
+                    <option>book</option>
+                    <option>box</option>
+                  </select>
                 </div>
               </div>
             </div>
             <div class="form-group">
               <div class="row">
                 <div class="col">
-                  <label for="creator_id">creator id:</label>
-                  <input type="text" class="form-control" id="creator_id" placeholder="creator id" readonly>
+                  <label for="create_mission_deadline">deadline:</label>
+                  <input type="text" class="form-control" id="create_mission_deadline" placeholder="deadline date">
                 </div>
                 <div class="col">
-                  <label for="create_time">create time:</label>
-                  <input type="text" class="form-control" id="create_time" placeholder="the create time" readonly>
+                  <label for="create_mission_urgency">urgency:</label>
+                  <select class="form-control" id="create_mission_urgency">
+                    <option>0</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="row">
+                <div class="col">
+                  <label for="create_creator_id">creator id:</label>
+                  <input type="text" class="form-control" id="create_creator_id" placeholder="creator id" readonly>
+                </div>
+                <div class="col">
+                  <label for="create_create_time">create time:</label>
+                  <input type="text" class="form-control" id="create_create_time" placeholder="the create time"
+                    readonly>
                 </div>
               </div>
             </div>
@@ -157,57 +184,11 @@
               <label for="exampleFormControlTextarea1">Example textarea</label>
               <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary" id="create_confirm">Confirm</button>
+            <button type="reset" class="btn btn-secondary">Reset</button>
           </form>
-        </div>
-      </div>
 
-      <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
-        <form style="margin-top:1%">
-          <div class="form-group">
-            <div class="row">
-              <div class="col">
-                <input type="text" class="form-control" id="key_word_1">
-              </div>
-              <div class="col">
-                <input type="text" class="form-control" id="key_word_2">
-              </div>
-              <div class="col">
-                <button type="submit" class="btn btn-primary">Search</button>
-              </div>
-            </div>
-          </div>
-        </form>
-        <table class="table table-striped">
-          <thead>
-            <tr>
-              <th scope="col">#</th>
-              <th scope="col">ID</th>
-              <th scope="col">Name</th>
-              <th scope="col">Time</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th scope="row">1</th>
-              <td>001</td>
-              <td>Tom's archive</td>
-              <td>2019.05.5</td>
-            </tr>
-            <tr>
-              <th scope="row">2</th>
-              <td>002</td>
-              <td>Jack's archive</td>
-              <td>2019.05.4</td>
-            </tr>
-            <tr>
-              <th scope="row">3</th>
-              <td>003</td>
-              <td>Mike's archive</td>
-              <td>2019.05.3</td>
-            </tr>
-          </tbody>
-        </table>
+        </div>
       </div>
     </div>
   </div>
@@ -216,6 +197,47 @@
   <script src="../Environment/jquery-3.4.1.min.js"></script>
   <script src="../Environment/popper.min.js"></script>
   <script src="../Environment/bootstrap.min.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function () {
+      var dateTemp = new Date();
+      var nowDate = dateTemp.getFullYear() + "-" + (dateTemp.getMonth() + 1) + "-" + dateTemp.getDate() + " " + dateTemp.getHours() + ":" + dateTemp.getMinutes() + ":" + dateTemp.getSeconds();
+      var nowUserID = "Mike";
+      $("#create_search").click(function () {
+        $.ajax({
+          type: "GET",
+          url: "test.php",
+          dataType: "json",
+          success: function () {
+
+          },
+          error: function () {
+            alert("can not search!");
+          }
+        });
+      });
+      $("#create_confirm").click(function () {
+        $.ajax({
+          type: "POST",
+          url: "test.php",
+          dataType: "json",
+          data: {
+            TargetID:$("#create_target_id").val(),
+            TargetType:$("#create_target_type").val(),
+            DeadLine:$("#create_mission_deadline").val(),
+            Urgency:$("#create_mission_urgency").val(),
+            CreatorID: nowUserID,
+            CreateTime: nowDate
+          },
+          success: function () {
+
+          },
+          error: function () {
+            alert("error!");
+          },
+        });
+      });
+    });
+  </script>
 </body>
 
 </html>

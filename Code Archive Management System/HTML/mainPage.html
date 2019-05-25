@@ -61,9 +61,10 @@
           url: "test.php",
           dataType: "json",
           data: {
+            ProcessName: "Login",
             UserID: $("#user_id").val(),
-            UPassword: $("#user_pwd").val(),
-            UAuthority: $("#chose_identity").val()
+            Password: $("#user_pwd").val(),
+            Identity: $("#chose_identity").val()
           },
           /*假设后台返回的reData中包含status（0为出错，1为成功）和message两个键值对内容*/
           success: function (reData) {
